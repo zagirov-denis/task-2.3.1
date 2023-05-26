@@ -32,9 +32,6 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public User findById(long id) {
-//        TypedQuery<User> query = entityManager.createQuery("select u from User u where u.id = :id", User.class);
-//        query.setParameter("id", id);
-//        User user = query.getSingleResult();
         return entityManager.find(User.class, id);
     }
 

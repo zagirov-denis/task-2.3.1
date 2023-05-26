@@ -16,8 +16,12 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    @Autowired
+
     private UserService userService;
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/signup")
     public String showSignUpForm(User user) {
